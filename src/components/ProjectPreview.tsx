@@ -1,23 +1,7 @@
 import type { CaseStudy, PreviewKind } from '../data/projects'
 import './ProjectPreview.css'
 
-const STAGES = ['Received', 'Processing', 'Dispatched', 'In transit', 'Customs', 'Delivered']
-const CURRENT_STAGE = 3
 const DESTINATIONS = ['Canada', 'United Kingdom', 'Ireland', 'South Korea', 'New Zealand']
-
-/** YvexCargo: the six-stage shipment pipeline the whole product is organised around. */
-function Pipeline() {
-  return (
-    <ol className="plate__stages" aria-label="Six shipment stages">
-      {STAGES.map((stage, i) => (
-        <li key={stage} className={i < CURRENT_STAGE ? 'is-done' : i === CURRENT_STAGE ? 'is-now' : ''}>
-          <span className="plate__node" aria-hidden="true" />
-          <span className="plate__stage">{stage}</span>
-        </li>
-      ))}
-    </ol>
-  )
-}
 
 /** Oma Synergies: destination pages sit next to the services they belong to. */
 function Destinations() {
@@ -31,7 +15,7 @@ function Destinations() {
   )
 }
 
-const plates: Record<PreviewKind, () => JSX.Element> = { yvexcargo: Pipeline, oma: Destinations }
+const plates: Record<PreviewKind, () => JSX.Element> = { oma: Destinations }
 
 /**
  * A drawn plate of what each product is built around, not a fake screenshot.
