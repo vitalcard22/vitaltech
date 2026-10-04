@@ -9,12 +9,8 @@ export function Footer() {
           © {site.year} {site.brand}
         </span>
         <span className="label footer__mid">{site.location}</span>
-        <button
-          type="button"
-          className="label footer__top"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          Back to top ↑
+        <button type="button" className="label footer__top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          Back to top
         </button>
       </div>
     </footer>

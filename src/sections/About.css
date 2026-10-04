@@ -1,3 +1,17 @@
+.about {
+  border-top: 1px solid var(--line);
+}
+
+.about__title {
+  font-size: clamp(2.5rem, 11vw, 9.5rem);
+  font-stretch: 112%;
+  line-height: 0.9;
+  margin-bottom: clamp(56px, 8vw, 112px);
+}
+.about__word {
+  display: block;
+}
+
 .about__grid {
   display: grid;
   gap: clamp(48px, 7vw, 96px);
@@ -5,15 +19,20 @@
 
 .about__body {
   display: grid;
-  gap: 28px;
+  gap: 24px;
   align-content: start;
 }
-.about__first {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 500;
-  line-height: 1.2;
-  letter-spacing: -0.025em;
-  max-width: 24ch;
+.about__lede {
+  font-size: clamp(1.625rem, 3vw, 2.5rem);
+  line-height: 1.22;
+  letter-spacing: -0.015em;
+  max-width: 28ch;
+}
+.about__p {
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 54ch;
 }
 
 .about__facts {
@@ -24,20 +43,18 @@
 .about__fact {
   display: grid;
   gap: 4px;
-  padding-block: 20px;
+  padding-block: 18px;
   border-bottom: 1px solid var(--line);
 }
 .about__fact dd {
   margin: 0;
   font-size: 1.125rem;
+  line-height: 1.4;
 }
 
 @media (min-width: 900px) {
   .about__grid {
     grid-template-columns: 1.4fr 1fr;
     column-gap: clamp(64px, 8vw, 144px);
-  }
-  .about__first {
-    max-width: 22ch;
   }
 }

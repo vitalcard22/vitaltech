@@ -2,10 +2,8 @@ export type PreviewKind = 'yvexcargo' | 'oma'
 
 export interface CaseStudy {
   slug: string
-  index: string
   title: string
-  categories: string[]
-  summary: string
+    summary: string
   preview: PreviewKind
   liveUrl: string
   role: string
@@ -22,11 +20,9 @@ export interface CaseStudy {
 export const projects: CaseStudy[] = [
   {
     slug: 'yvexcargo',
-    index: '01',
     title: 'YvexCargo',
-    categories: ['Logistics', 'Web Development', 'Product Design'],
     summary:
-      'A modern international logistics platform designed to simplify shipment tracking, client management and shipment operations.',
+      'International shipment tracking for clients, and a dashboard for the team that moves each parcel through six stages.',
     preview: 'yvexcargo',
     liveUrl: 'https://yvexcargo.com',
     role: 'Design & full-stack development',
@@ -45,24 +41,22 @@ export const projects: CaseStudy[] = [
       { title: 'Six-stage shipment pipeline', body: 'A clear, consistent status model that clients and staff both understand.' },
       { title: 'Admin dashboard', body: 'Create, update and follow shipments from one place, working with live data only.' },
       { title: 'Secure accounts', body: 'Authentication with hashed passwords and token-based sessions.' },
-      { title: 'A cinematic front door', body: 'A homepage with a slow crossfade hero, parallax and scroll reveals that signals a serious logistics brand.' },
+      { title: 'A homepage with presence', body: 'A slow crossfade hero, parallax and scroll reveals, so the first screen feels like a real logistics company.' },
     ],
     result: {
       heading: 'A live logistics product, built end to end.',
       points: [
         'Front end on Vercel, API and PostgreSQL database deployed separately',
         'Full user authentication and an admin workflow',
-        'Mobile navigation and routing that work like a real product',
+        'Mobile navigation and routing that behave like a real product',
       ],
     },
   },
   {
     slug: 'oma-synergies',
-    index: '02',
     title: 'Oma Synergies Travels & Tours',
-    categories: ['Travel', 'Web Development', 'UX'],
     summary:
-      'A premium travel and study-abroad platform designed to present travel, education and visa services in a modern digital experience.',
+      'A mobile-first site for a travel and study-abroad consultancy: seven services, twelve destinations, and WhatsApp as the front door.',
     preview: 'oma',
     liveUrl: 'https://omasynergiestravel.com',
     role: 'Design & front-end development',
@@ -80,11 +74,11 @@ export const projects: CaseStudy[] = [
     solution: [
       { title: 'Seven services, made clear', body: 'Each service has its own page and a consistent structure, so visitors can compare and decide.' },
       { title: 'Twelve destinations', body: 'Destination pages linked to testimonials, so proof sits right next to the choice.' },
-      { title: 'Custom icon system', body: 'A real SVG icon set replaced stock emoji, giving the whole site a more premium feel.' },
+      { title: 'Custom icon system', body: 'A real SVG icon set replaced stock emoji, so the site stops looking like a template.' },
       { title: 'Portal preview', body: 'An interactive preview shows clients what their future dashboard will look like.' },
     ],
     result: {
-      heading: 'A premium, mobile-first presence for a growing consultancy.',
+      heading: 'A mobile-first site for a growing consultancy.',
       points: [
         'Live at omasynergiestravel.com',
         'Consistent look across home, services, destinations and contact',
@@ -94,9 +88,6 @@ export const projects: CaseStudy[] = [
   },
 ]
 
-export const placeholders = [
-  { index: '03', label: 'Next project' },
-  { index: '04', label: 'Next project' },
-]
+export const placeholders = [{ id: 'next-a' }, { id: 'next-b' }]
 
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug)

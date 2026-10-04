@@ -40,7 +40,6 @@ export function Navbar() {
             navigate('/')
           }}
         >
-          <span className="navbar__mark" aria-hidden="true" />
           {site.brand}
         </a>
 
@@ -61,8 +60,8 @@ export function Navbar() {
         </nav>
 
         <div className="navbar__cta">
-          <Button variant="ghost" arrow="up" onClick={() => go('contact')}>
-            Hire Me
+          <Button variant="ghost" onClick={() => go('contact')}>
+            Hire me ↗
           </Button>
         </div>
 
@@ -81,24 +80,22 @@ export function Navbar() {
 
       <div id="mobile-menu" className="navbar__sheet" hidden={!open}>
         <nav className="container navbar__sheet-inner" aria-label="Mobile">
-          {nav.map((item, i) => (
+          {nav.map((item) => (
             <a
               key={item.target}
               href={`/#${item.target}`}
-              className="navbar__sheet-link display"
-              style={{ transitionDelay: `${i * 60}ms` }}
+              className="navbar__sheet-link"
               onClick={(e) => {
                 e.preventDefault()
                 go(item.target)
               }}
             >
-              <span className="label">0{i + 1}</span>
               {item.label}
             </a>
           ))}
           <div className="navbar__sheet-cta">
-            <Button variant="primary" arrow="up" size="lg" onClick={() => go('contact')}>
-              Hire Me
+            <Button variant="primary" size="lg" onClick={() => go('contact')}>
+              Hire me ↗
             </Button>
           </div>
         </nav>

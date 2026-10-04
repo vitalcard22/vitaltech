@@ -14,9 +14,9 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-display);
+  font-family: var(--font-serif);
   font-size: var(--fs-body);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -68,7 +68,7 @@ button {
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
-  border-radius: 2px;
+  border-radius: var(--radius);
 }
 
 .skip-link {
@@ -79,10 +79,9 @@ button {
   background: var(--accent);
   color: var(--accent-ink);
   padding: 10px 16px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-label);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 500;
 }
 .skip-link:focus {
   top: 12px;
@@ -109,36 +108,40 @@ button {
 }
 
 /* Typography primitives */
+/* Small interface text: sentence case, no tracking tricks */
 .label {
-  font-family: var(--font-mono);
-  font-size: var(--fs-label);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  letter-spacing: 0.005em;
   color: var(--text-dim);
 }
 
+/* The big uppercase voice: headline, services, about, contact */
 .display {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
+  font-stretch: 108%;
   text-transform: uppercase;
-  letter-spacing: -0.035em;
-  line-height: 0.92;
+  letter-spacing: -0.025em;
+  line-height: 0.94;
 }
 
-.serif {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: -0.02em;
+/* Quiet section titles */
+.heading {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  font-stretch: 100%;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .lead {
   font-size: var(--fs-lead);
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--text-dim);
-  max-width: 52ch;
+  max-width: 54ch;
 }
 
 .hairline {
@@ -148,18 +151,36 @@ button {
   margin: 0;
 }
 
+/* Two-column section frame: title on the left, content on the right */
+.split {
+  display: grid;
+  gap: clamp(40px, 6vw, 72px);
+}
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+  .split__head {
+    grid-column: 1 / span 3;
+    align-self: start;
+    position: sticky;
+    top: calc(var(--nav-h) + 32px);
+  }
+  .split__body {
+    grid-column: 4 / span 9;
+    min-width: 0;
+  }
+}
+
 /* Reveal (driven by useReveal) */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity var(--t-slow) var(--ease),
-    transform var(--t-slow) var(--ease);
+  transition: opacity 900ms var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -175,6 +196,5 @@ button {
   }
   .reveal {
     opacity: 1;
-    transform: none;
   }
 }

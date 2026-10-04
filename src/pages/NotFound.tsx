@@ -12,13 +12,13 @@ export function NotFound() {
 
   return (
     <section className="container" style={{ minHeight: '80svh', display: 'grid', alignContent: 'center', gap: 32 }}>
-      <p className="label">404</p>
-      <h1 className="display" style={{ fontSize: 'clamp(3rem, 12vw, 10rem)' }}>
-        Page not <span className="serif">found</span>
+            <h1 className="display" style={{ fontSize: 'clamp(2.5rem, 10vw, 8rem)' }}>
+        Page not found
       </h1>
+      <p className="lead">That address does not lead anywhere on this site.</p>
       <div>
-        <Button variant="primary" arrow="right" to="/">
-          Back home
+        <Button variant="primary" to="/">
+          Back to the homepage
         </Button>
       </div>
     </section>

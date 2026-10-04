@@ -20,7 +20,7 @@
 
 .navbar.is-scrolled,
 .navbar.is-open {
-  background: rgba(11, 11, 12, 0.92);
+  background: rgba(14, 21, 17, 0.94);
   border-color: var(--line);
 }
 .navbar.is-scrolled .navbar__inner {
@@ -30,44 +30,13 @@
 .navbar__brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  font-weight: 500;
-  font-size: clamp(0.78rem, 3.4vw, 1.05rem);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-stretch: 108%;
+  font-size: clamp(0.8rem, 3.5vw, 1.0625rem);
   letter-spacing: -0.01em;
-  text-transform: uppercase;
   white-space: nowrap;
   min-width: 0;
-}
-
-/* two overlapping rings: the site's one recurring motif */
-.navbar__mark {
-  position: relative;
-  width: 26px;
-  height: 16px;
-}
-.navbar__mark::before,
-.navbar__mark::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 1.5px solid var(--text);
-  transition: transform var(--t-med) var(--ease);
-}
-.navbar__mark::before {
-  left: 0;
-}
-.navbar__mark::after {
-  left: 10px;
-  border-color: var(--accent);
-}
-.navbar__brand:hover .navbar__mark::before {
-  transform: translateX(-3px);
-}
-.navbar__brand:hover .navbar__mark::after {
-  transform: translateX(3px);
 }
 
 .navbar__links {
@@ -77,10 +46,9 @@
 
 .navbar__link {
   position: relative;
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: var(--fs-small);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 500;
   color: var(--text-dim);
   padding-block: 6px;
   transition: color var(--t-fast) var(--ease);
@@ -160,11 +128,11 @@
   align-items: baseline;
   gap: 20px;
   padding-block: 22px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.03em;
   font-size: clamp(2.4rem, 12vw, 4rem);
   border-bottom: 1px solid var(--line);
-}
-.navbar__sheet-link .label {
-  color: var(--accent);
 }
 .navbar__sheet-cta {
   margin-top: auto;

@@ -2,21 +2,14 @@
   border-top: 1px solid var(--line);
 }
 
-.contact__eyebrow {
-  margin-bottom: clamp(32px, 5vw, 64px);
-}
-
 .contact__title {
-  font-size: clamp(2.75rem, 10.5vw, 10.5rem);
-  line-height: 0.9;
-  margin-bottom: clamp(56px, 9vw, 128px);
+  font-size: clamp(2.4rem, 10.5vw, 9.5rem);
+  font-stretch: 112%;
+  line-height: 0.92;
+  margin-bottom: clamp(56px, 9vw, 120px);
 }
 .contact__line {
   display: block;
-}
-.contact__line.serif {
-  color: var(--accent);
-  text-transform: none;
 }
 
 .contact__row {
@@ -35,32 +28,22 @@
 }
 .contact__link {
   display: grid;
-  grid-template-columns: 96px 1fr auto;
+  grid-template-columns: 96px 1fr;
   align-items: baseline;
   gap: 16px;
   padding-block: 22px;
   border-bottom: 1px solid var(--line);
-  transition:
-    color var(--t-fast) var(--ease),
-    padding-left var(--t-med) var(--ease);
+  transition: color var(--t-fast) var(--ease);
 }
 .contact__value {
-  font-size: clamp(1rem, 2vw, 1.375rem);
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  font-size: clamp(1.0625rem, 2vw, 1.5rem);
   overflow-wrap: anywhere;
-}
-.contact__arrow {
-  color: var(--text-faint);
-  transition:
-    color var(--t-fast) var(--ease),
-    transform var(--t-med) var(--ease);
 }
 .contact__link:hover {
   color: var(--accent);
-  padding-left: 12px;
-}
-.contact__link:hover .contact__arrow {
-  color: var(--accent);
-  transform: translate(3px, -3px);
 }
 
 @media (min-width: 900px) {
@@ -70,6 +53,6 @@
     align-items: start;
   }
   .contact__link {
-    grid-template-columns: 120px 1fr auto;
+    grid-template-columns: 120px 1fr;
   }
 }

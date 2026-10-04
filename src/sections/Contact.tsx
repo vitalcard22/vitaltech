@@ -9,13 +9,9 @@ export function Contact() {
     <section id="contact" className="section contact" aria-labelledby="contact-title">
       <div className="container">
         <Reveal>
-          <p className="label contact__eyebrow">05 / Contact</p>
-        </Reveal>
-
-        <Reveal delay={100}>
           <h2 id="contact-title" className="display contact__title">
-            {contact.headline.map((line, i) => (
-              <span key={line} className={i === 1 ? 'contact__line serif' : 'contact__line'}>
+            {contact.headline.map((line) => (
+              <span key={line} className="contact__line">
                 {line}
               </span>
             ))}
@@ -25,7 +21,7 @@ export function Contact() {
         <div className="contact__row">
           <Reveal delay={150} className="contact__lead">
             <p className="lead">{contact.sub}</p>
-            <Button variant="primary" arrow="up" size="lg" href={primary.href}>
+            <Button variant="primary" size="lg" href={primary.href}>
               {contact.cta}
             </Button>
           </Reveal>
@@ -40,9 +36,6 @@ export function Contact() {
                 >
                   <span className="label">{l.label}</span>
                   <span className="contact__value">{l.value}</span>
-                  <span className="contact__arrow" aria-hidden="true">
-                    ↗
-                  </span>
                 </a>
               </li>
             ))}

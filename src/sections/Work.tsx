@@ -1,35 +1,30 @@
 import { placeholders, projects } from '../data/projects'
 import { ProjectEntry } from '../components/ProjectEntry'
 import { Reveal } from '../components/Reveal'
-import { SectionHeading } from '../components/SectionHeading'
 import './Work.css'
 
 export function Work() {
   return (
     <section id="work" className="section work" aria-labelledby="work-title">
-      <div className="container">
-        <SectionHeading index="01" label="Work" id="work-title">
-          Selected
-          <br />
-          <span className="serif">work</span>
-        </SectionHeading>
+      <div className="container split">
+        <h2 id="work-title" className="heading split__head">
+          Selected work
+        </h2>
 
-        <div className="work__list">
-          {projects.map((p, i) => (
-            <ProjectEntry key={p.slug} project={p} align={i % 2 === 0 ? 'left' : 'right'} />
-          ))}
+        <div className="split__body">
+          <div className="work__list">
+            {projects.map((p) => (
+              <ProjectEntry key={p.slug} project={p} />
+            ))}
+          </div>
+
+          {/* Reserved for future projects; nothing is invented here */}
+          <Reveal as="ul" className="work__next">
+            {placeholders.map((p) => (
+              <li key={p.id}>Next project, in progress</li>
+            ))}
+          </Reveal>
         </div>
-
-        {/* Placeholders for future projects — nothing invented */}
-        <ul className="work__next" aria-label="Upcoming projects">
-          {placeholders.map((p) => (
-            <Reveal as="li" key={p.index} className="work__slot">
-              <span className="display work__slot-index">{p.index}</span>
-              <span className="label">{p.label}</span>
-              <span className="label work__slot-status">In the works</span>
-            </Reveal>
-          ))}
-        </ul>
       </div>
     </section>
   )

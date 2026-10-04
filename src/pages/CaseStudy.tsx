@@ -30,9 +30,9 @@ export function CaseStudy({ slug }: { slug: string }) {
       <header className="case__hero">
         <div className="container">
           <Link to="/" className="label case__back">
-            ← All work
+            All work
           </Link>
-          <p className="label case__cats">{project.categories.join(' · ')}</p>
+          <p className="label case__cats">{project.type}</p>
           <h1 className="display case__title">{project.title}</h1>
         </div>
         <div className="container case__hero-visual">
@@ -60,7 +60,7 @@ export function CaseStudy({ slug }: { slug: string }) {
             <dt className="label">Live site</dt>
             <dd>
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="case__ext">
-                {project.liveUrl.replace(/^https?:\/\//, '')} ↗
+                {project.liveUrl.replace(/^https?:\/\//, '')}
               </a>
             </dd>
           </div>
@@ -68,7 +68,7 @@ export function CaseStudy({ slug }: { slug: string }) {
       </CaseSection>
 
       {/* ---------- 02 Challenge ---------- */}
-      <CaseSection index="02" title="The Challenge" id="case-challenge">
+      <CaseSection index="02" title="Challenge" id="case-challenge">
         {project.challenge.map((p, i) => (
           <Reveal key={p} delay={i * 80}>
             <p className={i === 0 ? 'case__statement' : 'lead'}>{p}</p>
@@ -77,20 +77,19 @@ export function CaseStudy({ slug }: { slug: string }) {
       </CaseSection>
 
       {/* ---------- 03 Approach ---------- */}
-      <CaseSection index="03" title="The Approach" id="case-approach">
-        <ol className="case__steps">
+      <CaseSection index="03" title="Approach" id="case-approach">
+        <ul className="case__steps">
           {project.approach.map((a, i) => (
             <Reveal as="li" key={a.title} className="case__step" delay={i * 80}>
-              <span className="display case__step-n">0{i + 1}</span>
               <h3 className="case__step-title">{a.title}</h3>
               <p className="lead">{a.body}</p>
             </Reveal>
           ))}
-        </ol>
+        </ul>
       </CaseSection>
 
       {/* ---------- 04 Solution ---------- */}
-      <CaseSection index="04" title="The Solution" id="case-solution">
+      <CaseSection index="04" title="Solution" id="case-solution">
         {project.images?.gallery?.length ? (
           <div className="case__gallery">
             {project.images.gallery.map((src) => (
@@ -118,7 +117,7 @@ export function CaseStudy({ slug }: { slug: string }) {
       <CaseSection index="05" title="Technology" id="case-tech">
         <Reveal as="ul" className="case__stack">
           {project.stack.map((t) => (
-            <li key={t} className="display">
+            <li key={t}>
               {t}
             </li>
           ))}
@@ -126,7 +125,7 @@ export function CaseStudy({ slug }: { slug: string }) {
       </CaseSection>
 
       {/* ---------- 06 Final Result ---------- */}
-      <CaseSection index="06" title="Final Result" id="case-result">
+      <CaseSection index="06" title="Result" id="case-result">
         <Reveal>
           <p className="case__statement case__statement--xl">{project.result.heading}</p>
         </Reveal>
@@ -136,7 +135,7 @@ export function CaseStudy({ slug }: { slug: string }) {
           ))}
         </Reveal>
         <Reveal delay={150}>
-          <Button variant="primary" arrow="up" size="lg" href={project.liveUrl} external>
+          <Button variant="primary" size="lg" href={project.liveUrl} external>
             Visit live site
           </Button>
         </Reveal>
@@ -147,10 +146,7 @@ export function CaseStudy({ slug }: { slug: string }) {
         <Link to={`/work/${next.slug}`} className="case__next">
           <div className="container case__next-inner">
             <span className="label">Next case study</span>
-            <span className="display case__next-title">{next.title}</span>
-            <span className="case__next-arrow" aria-hidden="true">
-              →
-            </span>
+            <span className="case__next-title">{next.title}</span>
           </div>
         </Link>
       )}
