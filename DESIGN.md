@@ -11,12 +11,12 @@ Typography → Layout → Whitespace → Imagery → Motion. Effects are the las
 | `--line` | `rgba(255,255,255,.09)` | Hairline borders |
 | `--text` | `#EDEDE8` | Primary text (warm off-white) |
 | `--text-dim` | `#8E8E88` | Secondary text |
-| `--accent` | `#C6F432` | Signal colour: links, hover, key marks. Used sparingly |
+| `--accent` | `#E2B659` | Harvest gold: the one accent, used sparingly (background is `#0E1511`, text `#EBE6D6`) |
 
 ## Type
-- Display: **Inter Tight** 500, tight tracking, uppercase, `clamp()` fluid sizes
-- Editorial accent: **Instrument Serif** italic, used for single emphasised words
-- Labels / meta: **JetBrains Mono**, small uppercase, wide tracking
+- Display and interface: **Archivo** (variable, width axis), uppercase for the big headlines, sentence case elsewhere
+- Reading text: **Newsreader**
+- Both fonts are self-hosted through Fontsource; no external font requests
 - Scale: 12 · 14 · 16 · 20 · 28 · 40 · 64 · 120 (fluid)
 
 ## Spacing
