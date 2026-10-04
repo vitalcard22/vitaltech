@@ -32,9 +32,11 @@
   align-items: center;
   gap: 12px;
   font-weight: 500;
-  font-size: 1.05rem;
+  font-size: clamp(0.78rem, 3.4vw, 1.05rem);
   letter-spacing: -0.01em;
   text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 /* two overlapping rings: the site's one recurring motif */

@@ -4,9 +4,11 @@
  */
 
 export const site = {
-  brand: 'Yown', // TODO: replace with your full name or studio name
+  brand: 'Nwanehiudu Henry Chisom',
   title: 'AI Web Developer · Data Analyst · Digital Marketer',
-  location: 'Available worldwide · Remote',
+  role: 'Senior Data Analyst & Digital Marketer',
+  company: 'Uvanka Company Limited (Agro City)',
+  location: 'Open to freelance projects · Remote',
   year: new Date().getFullYear(),
 }
 
@@ -56,13 +58,14 @@ export const about = {
   paragraphs: [
     'I work across three things that usually sit in separate teams: building websites, making sense of data, and getting the right people to find them.',
     'That mix matters. A well-built site that nobody can find does little, and traffic you never measure teaches you nothing. So I build the product, look at what the numbers say, and use that to decide what to do next.',
+    'I currently work as a Senior Data Analyst and Digital Marketer at Uvanka Company Limited (Agro City), and I build websites and digital products alongside that.',
     'I use AI tools as part of how I work, to move faster and try more ideas. The decisions, the taste and the accountability stay with me.',
   ],
   facts: [
     { k: 'Focus', v: 'Web, data & marketing' },
     { k: 'Approach', v: 'Build · Measure · Improve' },
-    { k: 'Works with', v: 'Founders & small businesses' },
-    { k: 'Base', v: 'Remote, worldwide' },
+    { k: 'Currently', v: 'Senior Data Analyst & Digital Marketer' },
+    { k: 'Company', v: 'Uvanka Company Limited (Agro City)' },
   ],
 }
 
