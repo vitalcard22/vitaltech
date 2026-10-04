@@ -1,0 +1,168 @@
+/* All sizes use container query units so the mockup scales with its frame. */
+.pv,
+.pv__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pv {
+  display: flex;
+  flex-direction: column;
+  padding: 4cqw 5cqw;
+  font-size: 1.6cqw;
+}
+
+.pv__nav {
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+}
+.pv__nav b {
+  margin-right: auto;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-size: 1.5cqw;
+}
+.pv__nav span {
+  width: 5cqw;
+  height: 0.5cqw;
+  border-radius: 1cqw;
+  background: currentColor;
+  opacity: 0.25;
+}
+
+.pv__body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 4cqw;
+  align-items: center;
+}
+
+.pv__copy small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.3cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 2cqw;
+}
+.pv__copy h4 {
+  margin: 0 0 3cqw;
+  font-weight: 500;
+  font-size: 5.2cqw;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.pv__btn {
+  display: inline-block;
+  font-style: normal;
+  font-size: 1.4cqw;
+  padding: 1.1cqw 2.4cqw;
+  border-radius: 99px;
+}
+
+/* ---------- YvexCargo: dark, operational ---------- */
+.pv--yvex {
+  background: radial-gradient(120% 90% at 85% 10%, #1b2331 0%, #0d1117 60%);
+  color: #e9edf3;
+}
+.pv--yvex .pv__btn {
+  background: #e9edf3;
+  color: #0d1117;
+}
+.pv__card {
+  padding: 2.6cqw;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 1.4cqw;
+  background: rgba(255, 255, 255, 0.03);
+}
+.pv__card small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.1cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.pv__card strong {
+  display: block;
+  margin: 0.6cqw 0 2cqw;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 2cqw;
+}
+.pv__card ol {
+  display: grid;
+  gap: 1.3cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pv__card li {
+  display: flex;
+  align-items: center;
+  gap: 1.2cqw;
+  font-size: 1.3cqw;
+  opacity: 0.4;
+}
+.pv__card li span {
+  width: 1.1cqw;
+  height: 1.1cqw;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+}
+.pv__card li.done,
+.pv__card li.now {
+  opacity: 1;
+}
+.pv__card li.done span {
+  background: #5fd0a0;
+  border-color: #5fd0a0;
+}
+.pv__card li.now span {
+  border-color: #5fd0a0;
+  box-shadow: 0 0 0 0.35cqw rgba(95, 208, 160, 0.25);
+}
+
+/* ---------- Oma Synergies: navy + gold ---------- */
+.pv--oma {
+  background: linear-gradient(160deg, #262845 0%, #1f2035 55%, #171828 100%);
+  color: #f4f1e8;
+}
+.pv--oma .pv__nav em {
+  display: inline-grid;
+  place-items: center;
+  width: 3cqw;
+  height: 3cqw;
+  margin-right: 0.8cqw;
+  border-radius: 50%;
+  border: 1px solid #f0b124;
+  color: #f0b124;
+  font-style: normal;
+  font-size: 1.1cqw;
+}
+.pv--oma .pv__btn {
+  background: #f0b124;
+  color: #1f2035;
+}
+.pv__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1cqw;
+  justify-content: flex-end;
+}
+.pv__chips span {
+  padding: 1cqw 1.8cqw;
+  border-radius: 99px;
+  border: 1px solid rgba(240, 177, 36, 0.5);
+  color: #f0b124;
+  font-size: 1.3cqw;
+}
+.pv__chips span:nth-child(odd) {
+  background: rgba(240, 177, 36, 0.1);
+}

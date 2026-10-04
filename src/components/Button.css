@@ -1,0 +1,74 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color var(--t-med) var(--ease),
+    border-color var(--t-med) var(--ease);
+}
+
+.btn--md {
+  padding: 14px 24px;
+}
+.btn--lg {
+  padding: 20px 34px;
+  font-size: 0.95rem;
+}
+
+/* fill sweeps up from below on hover */
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateY(101%);
+  transition: transform var(--t-med) var(--ease);
+  border-radius: inherit;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.btn--primary::before {
+  background: var(--text);
+}
+.btn--ghost {
+  color: var(--text);
+}
+.btn--ghost::before {
+  background: var(--text);
+}
+
+.btn:hover::before,
+.btn:focus-visible::before {
+  transform: translateY(0);
+}
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  color: var(--accent-ink);
+  border-color: var(--text);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  border-color: var(--text);
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--t-med) var(--ease);
+}
+.btn:hover .btn__arrow {
+  transform: translate(3px, -3px);
+}

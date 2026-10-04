@@ -1,0 +1,28 @@
+.case-section {
+  padding-block: clamp(64px, 10vw, 140px);
+  border-top: 1px solid var(--line);
+}
+.case-section__grid {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+}
+.case-section__index {
+  color: var(--accent);
+}
+.case-section__body {
+  display: grid;
+  gap: clamp(32px, 5vw, 64px);
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .case-section__grid {
+    grid-template-columns: 1fr 3fr;
+    column-gap: clamp(32px, 4vw, 64px);
+  }
+  .case-section__head {
+    position: sticky;
+    top: calc(var(--nav-h) + 24px);
+    align-self: start;
+  }
+}

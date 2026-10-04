@@ -1,0 +1,38 @@
+:root {
+  /* Colour */
+  --bg: #0b0b0c;
+  --bg-raised: #121214;
+  --bg-raised-2: #18181b;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --text: #edede8;
+  --text-dim: #8e8e88;
+  --text-faint: #5a5a56;
+  --accent: #c6f432;
+  --accent-ink: #0b0b0c;
+
+  /* Type */
+  --font-display: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --fs-label: 0.75rem;
+  --fs-small: 0.875rem;
+  --fs-body: 1rem;
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.375rem);
+  --fs-h3: clamp(1.5rem, 2.4vw, 2.25rem);
+  --fs-h2: clamp(2.5rem, 7vw, 6.5rem);
+  --fs-h1: clamp(2.6rem, 8.4vw, 8.5rem);
+
+  /* Layout */
+  --gutter: clamp(20px, 4vw, 56px);
+  --max: 1440px;
+  --section: clamp(88px, 11vw, 160px);
+  --nav-h: 72px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --t-fast: 200ms;
+  --t-med: 400ms;
+  --t-slow: 700ms;
+}

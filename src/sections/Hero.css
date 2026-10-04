@@ -1,0 +1,126 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: calc(var(--nav-h) + 48px);
+  padding-bottom: clamp(40px, 6vw, 80px);
+  overflow: hidden;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+/* decorative mark: full-width above the headline on mobile, right column on desktop */
+.hero__visual {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(88vw, 520px);
+  transform: translateX(-50%);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__title {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(1.75rem, 7.6vw, 4.5rem);
+  margin-top: min(84vw, 470px);
+}
+
+.hero__line {
+  display: block;
+  overflow: hidden;
+  /* room for descenders inside the clip */
+  padding-bottom: 0.06em;
+  margin-bottom: -0.06em;
+}
+.hero__line-inner {
+  display: block;
+  transform: translateY(110%);
+  animation: hero-rise 1100ms var(--ease) forwards;
+}
+.hero__emph {
+  color: var(--accent);
+  text-transform: none;
+  font-size: 1.08em;
+  line-height: 0.9;
+}
+
+@keyframes hero-rise {
+  to {
+    transform: none;
+  }
+}
+
+.hero__foot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 32px;
+  padding-top: clamp(24px, 3vw, 40px);
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  animation: hero-fade 900ms var(--ease) 800ms forwards;
+}
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.hero__identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: var(--text);
+}
+.hero__identity li + li::before {
+  content: '·';
+  margin-right: 20px;
+  color: var(--accent);
+}
+
+.hero__side {
+  display: grid;
+  gap: 28px;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (min-width: 900px) {
+  .hero__foot {
+    grid-template-columns: 1fr 1.1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .hero__visual {
+    top: 0;
+    left: auto;
+    right: var(--gutter);
+    transform: none;
+    width: min(32vw, 460px);
+    opacity: 0.9;
+  }
+  .hero__title {
+    font-size: clamp(3rem, 5.9vw, 7.25rem);
+    margin-top: clamp(40px, 6vw, 96px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__line-inner {
+    transform: none;
+  }
+  .hero__foot {
+    opacity: 1;
+  }
+}

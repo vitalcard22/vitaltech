@@ -1,0 +1,24 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: 28px;
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+.footer__mid {
+  display: none;
+}
+.footer__top {
+  transition: color var(--t-fast) var(--ease);
+}
+.footer__top:hover {
+  color: var(--accent);
+}
+@media (min-width: 700px) {
+  .footer__mid {
+    display: inline;
+  }
+}

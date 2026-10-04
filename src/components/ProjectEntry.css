@@ -1,0 +1,107 @@
+.entry {
+  display: grid;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.entry__visual {
+  position: relative;
+}
+.entry__link {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+}
+.entry__link .frame {
+  transition:
+    transform var(--t-slow) var(--ease),
+    border-color var(--t-med) var(--ease);
+}
+.entry__link:hover .frame,
+.entry__link:focus-visible .frame {
+  transform: translateY(-6px);
+  border-color: rgba(198, 244, 50, 0.45);
+}
+
+/* small pill that appears over the preview on hover */
+.entry__cursor {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity var(--t-med) var(--ease),
+    transform var(--t-med) var(--ease);
+}
+.entry__link:hover .entry__cursor,
+.entry__link:focus-visible .entry__cursor {
+  opacity: 1;
+  transform: none;
+}
+
+.entry__text {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.entry__index {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  color: var(--text-faint);
+  line-height: 1;
+}
+.entry__title {
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 0.98;
+}
+
+.entry__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 8px;
+  padding-bottom: 6px;
+  color: var(--text);
+  border-bottom: 1px solid var(--line-strong);
+  transition:
+    color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+.entry__cta-arrow {
+  transition: transform var(--t-med) var(--ease);
+}
+.entry__cta:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.entry__cta:hover .entry__cta-arrow {
+  transform: translateX(5px);
+}
+
+@media (min-width: 900px) {
+  .entry {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: end;
+    column-gap: clamp(24px, 3vw, 48px);
+  }
+  .entry--left .entry__visual {
+    grid-column: 1 / span 8;
+    grid-row: 1;
+  }
+  .entry--left .entry__text {
+    grid-column: 9 / span 4;
+    grid-row: 1;
+  }
+  .entry--right .entry__visual {
+    grid-column: 5 / span 8;
+    grid-row: 1;
+  }
+  .entry--right .entry__text {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
