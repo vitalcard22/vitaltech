@@ -80,11 +80,11 @@ export const contact = {
   headline: ['Have a project', 'in mind?'],
   sub: 'Let’s build something meaningful.',
   cta: 'Start a Conversation',
-  // TODO: replace every link below with your real details
+  // TODO: add LinkedIn and X here when you have the links, for example:
+  // { label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: 'https://www.linkedin.com/in/your-handle' },
+  // { label: 'X', value: '@your_handle', href: 'https://x.com/your_handle' },
   links: [
-    { label: 'Email', value: 'hello@example.com', href: 'mailto:hello@example.com' },
-    { label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: 'https://www.linkedin.com/in/your-handle' },
-    { label: 'X', value: '@your_handle', href: 'https://x.com/your_handle' },
-    { label: 'WhatsApp', value: '+000 000 000 0000', href: 'https://wa.me/0000000000000' },
+    { label: 'Email', value: 'nwanehiuduchisom@gmail.com', href: 'mailto:nwanehiuduchisom@gmail.com' },
+    { label: 'WhatsApp', value: '+234 813 540 7221', href: 'https://wa.me/2348135407221' },
   ],
 }
