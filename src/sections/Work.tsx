@@ -1,6 +1,5 @@
-import { placeholders, projects } from '../data/projects'
+import { projects } from '../data/projects'
 import { ProjectEntry } from '../components/ProjectEntry'
-import { Reveal } from '../components/Reveal'
 import { SectionTitle } from '../components/SectionTitle'
 import './Work.css'
 
@@ -21,14 +20,6 @@ export function Work() {
             ))}
           </div>
 
-          <Reveal as="ul" className="work__next">
-            {placeholders.map((p) => (
-              <li key={p.index}>
-                <span className="label work__next-n">{p.index}</span>
-                <span className="label">Next project, in progress</span>
-              </li>
-            ))}
-          </Reveal>
         </div>
       </div>
     </section>
