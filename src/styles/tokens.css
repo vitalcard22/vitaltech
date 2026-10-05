@@ -1,30 +1,32 @@
 :root {
-  /* Colour: deep field green-black, bone paper, one harvest-gold accent */
-  --bg: #0e1511;
-  --bg-raised: #141d18;
-  --bg-raised-2: #1a251f;
-  --line: rgba(235, 230, 214, 0.1);
-  --line-strong: rgba(235, 230, 214, 0.22);
-  --text: #ebe6d6;
-  --text-dim: #9ba89f;
-  --text-faint: #66736a;
-  --accent: #e2b659;
-  --accent-ink: #0e1511;
+  /* Colour: near-black, bone text, one lime signature */
+  --bg: #0b0b0c;
+  --bg-raised: #121214;
+  --bg-raised-2: #18181b;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.2);
+  --text: #edede8;
+  --text-dim: #9a9a94;
+  --text-faint: #62625e;
+  --accent: #c6f432;
+  --accent-ink: #0b0b0c;
 
-  /* Type: Archivo (width axis) for display and interface, Newsreader for reading */
+  /* Type: Archivo for display, Newsreader for reading and italic emphasis, JetBrains Mono for labels */
   --font-display: 'Archivo Variable', 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-serif: 'Newsreader Variable', 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
+  --fs-label: 0.75rem;
+  --fs-nav: 0.875rem;
   --fs-small: 0.9375rem;
   --fs-body: 1.0625rem;
   --fs-lead: clamp(1.1875rem, 1.5vw, 1.4375rem);
-  --fs-h3: clamp(1.5rem, 2.4vw, 2.25rem);
-  --fs-h2: clamp(2rem, 3.4vw, 3rem);
+  --fs-h2: clamp(2rem, 3.6vw, 3.25rem);
 
   /* Layout */
   --gutter: clamp(20px, 4vw, 56px);
   --max: 1440px;
-  --section: clamp(80px, 10vw, 144px);
+  --section: clamp(88px, 11vw, 160px);
   --nav-h: 72px;
   --radius: 3px;
 
@@ -32,5 +34,5 @@
   --ease: cubic-bezier(0.2, 0.7, 0.1, 1);
   --t-fast: 200ms;
   --t-med: 400ms;
-  --t-slow: 700ms;
+  --t-slow: 800ms;
 }

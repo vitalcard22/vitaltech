@@ -1,13 +1,12 @@
 /**
- * All site copy and links live here. Edit this file — components never need touching.
- * Items marked TODO are placeholders to replace before launch.
+ * All site copy and links live here. Edit this file; components never need touching.
  */
 
 export const site = {
   brand: 'Nwanehiudu Henry Chisom',
   title: 'AI Web Developer · Data Analyst · Digital Marketer',
   role: 'Senior Data Analyst & Digital Marketer',
-  company: 'Uvanka Company Limited (Agro City)',
+  company: 'Uvanka Company Limited',
   location: 'Open to remote freelance projects',
   year: new Date().getFullYear(),
 }
@@ -16,73 +15,97 @@ export const nav = [
   { label: 'Work', target: 'work' },
   { label: 'Services', target: 'services' },
   { label: 'About', target: 'about' },
-  { label: 'Contact', target: 'contact' },
 ] as const
 
 export const hero = {
-  headline: ['I build digital', 'products that turn', 'ideas into', 'growth.'],
-  role: 'AI web developer, data analyst and digital marketer.',
-  description:
-    'I build websites and web apps, dig into the data behind them, and run the marketing that brings people in. By day I work at Uvanka Company Limited; the rest of my time goes to freelance projects.',
-  primary: 'See my work',
-  secondary: 'Start a project',
+  /** Each entry is one line on desktop. "|" marks an extra break used only on phones. */
+  headline: ['I build|digital', 'products|that turn', 'ideas into', 'growth.'],
+  emphasis: 'growth.',
+  designation: ['AI Web Developer', 'Data Analyst', 'Digital Marketer'],
+  statement:
+    'I combine web development, data and digital marketing to turn ideas into useful digital products and measurable business growth.',
+  primary: 'See selected work',
+  secondary: 'Let’s work together',
 }
 
+/** Web, Data and Growth: the three disciplines, used as a recurring tag across the site. */
 export const services = [
   {
     index: '01',
-    verb: 'Build',
+    tag: 'Web',
     title: 'AI web development',
-    body: 'Websites and web apps in React and TypeScript, designed for phones first and shipped on Vercel. I use AI tools to move faster, and I read every line that goes live.',
-    points: ['Websites and web apps', 'Mobile-first layouts', 'AI-assisted, human-reviewed'],
+    body: 'Websites and web apps built with AI-assisted workflows. I move fast, and I review every line before it goes live.',
   },
   {
     index: '02',
-    verb: 'Analyze',
-    title: 'Data analytics',
-    body: 'Spreadsheets and exports turned into clean tables, dashboards and a plain answer to what is working. I work in Python, SQL, Power BI and Excel.',
-    points: ['Data cleaning', 'Dashboards and reports', 'Recommendations you can act on'],
+    tag: 'Data',
+    title: 'Data & business intelligence',
+    body: 'Dashboards, reporting, KPIs and visualisation that show a business what is actually happening, in Excel, Power BI, SQL and Python.',
   },
   {
     index: '03',
-    verb: 'Grow',
-    title: 'Digital marketing',
-    body: 'SEO, content and campaign tracking, tied back to the numbers so you can see what brought people in and what to stop doing.',
-    points: ['SEO', 'Content strategy', 'Performance tracking'],
+    tag: 'Growth',
+    title: 'Digital marketing & SEO',
+    body: 'Search visibility, analytics and performance work that starts from the data instead of guesses.',
+  },
+  {
+    index: '04',
+    tag: 'Web · Data · Growth',
+    title: 'Digital product development',
+    body: 'Turning an idea into a structured, usable product: what it does, who uses it, how it is built and how you will know it works.',
   },
 ]
 
 export const about = {
-  heading: ['Technology.', 'Data.', 'Growth.'],
-  lede: 'Most teams split building, measuring and marketing into three jobs. I do all three, so each one informs the others.',
+  heading: 'I started from data.',
   paragraphs: [
-    'A well-built site that nobody finds does little, and traffic you never measure teaches you nothing. So I build the product, read what the numbers say, and use that to decide what to do next.',
-    'I use AI tools as part of how I work, to move faster and try more ideas. The decisions, the taste and the accountability stay with me.',
+    'Computer Science gave me the technical foundation. Working with business data at Uvanka showed me how decisions actually get made. Digital marketing showed me how those decisions turn into action.',
+    'So I stopped treating them as three jobs. A site that nobody finds does little. Traffic you never measure teaches you nothing. A dashboard nobody acts on is decoration.',
+    'Today I bring the three together and build digital products. I use AI tools to move faster. The judgement and the accountability stay with me.',
   ],
-  facts: [
-    { k: 'Right now', v: 'Senior Data Analyst and Digital Marketer at Uvanka Company Limited (Agro City)' },
-    { k: 'On the side', v: 'Websites and digital products for small businesses' },
-    { k: 'Method', v: 'Build, measure, improve' },
-    { k: 'Availability', v: 'Open to remote freelance projects' },
+  triad: ['I can build it.', 'I can analyse it.', 'I know how to grow it.'],
+}
+
+export const toolkit = [
+  { tag: 'Web', items: ['React', 'TypeScript', 'HTML & CSS', 'Java', 'GitHub', 'Vercel', 'AI-assisted development'] },
+  { tag: 'Data', items: ['Excel', 'Power BI', 'SQL', 'Python (basic)', 'Data visualisation', 'Business intelligence', 'KPI reporting', 'Microsoft Office'] },
+  { tag: 'Growth', items: ['SEO', 'Google Analytics', 'Digital marketing', 'Market research'] },
+]
+
+export const experience = {
+  heading: 'Experience',
+  lede: 'Same company, wider remit. I started by analysing the data and now own more of what happens with it.',
+  roles: [
+    {
+      period: '2022',
+      role: 'Data Analyst',
+      company: 'Uvanka Company Limited',
+      points: ['Analysing business and customer data', 'Building dashboards and reports'],
+    },
+    {
+      period: '2023 — Present',
+      role: 'Senior Data Analyst & Digital Marketer',
+      company: 'Uvanka Company Limited',
+      points: [
+        'Developing KPIs and preparing management reports',
+        'Analysing marketing performance',
+        'Researching markets and competitors',
+        'Supporting business decisions with data',
+        'Improving reporting processes',
+        'Working across teams',
+      ],
+    },
   ],
 }
 
-export const skills = [
-  { group: 'Development', items: ['React', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'GitHub', 'Vercel'] },
-  { group: 'Data', items: ['Python', 'SQL', 'Power BI', 'Excel'] },
-  { group: 'AI', items: ['AI-assisted development', 'AI tools', 'AI integrations'] },
-  { group: 'Marketing', items: ['SEO', 'Digital Marketing', 'Content Strategy', 'Analytics'] },
-]
-
 export const contact = {
-  headline: ['Have a project', 'in mind?'],
-  sub: 'Tell me what you need built, measured or grown. Email and WhatsApp both reach me directly.',
-  cta: 'Email me',
-  // TODO: add LinkedIn and X here when you have the links, for example:
-  // { label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: 'https://www.linkedin.com/in/your-handle' },
-  // { label: 'X', value: '@your_handle', href: 'https://x.com/your_handle' },
+  headline: ['Have an idea', 'worth building?'],
+  cta: 'Let’s work together',
   links: [
     { label: 'Email', value: 'nwanehiuduchisom@gmail.com', href: 'mailto:nwanehiuduchisom@gmail.com' },
     { label: 'WhatsApp', value: '+234 813 540 7221', href: 'https://wa.me/2348135407221' },
+    { label: 'GitHub', value: 'github.com/vitalcard22', href: 'https://github.com/vitalcard22' },
+    // TODO: add LinkedIn and X here when you have them, for example:
+    // { label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: 'https://www.linkedin.com/in/your-handle' },
   ],
 }

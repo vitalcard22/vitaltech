@@ -11,11 +11,12 @@ Typography → Layout → Whitespace → Imagery → Motion. Effects are the las
 | `--line` | `rgba(255,255,255,.09)` | Hairline borders |
 | `--text` | `#EDEDE8` | Primary text (warm off-white) |
 | `--text-dim` | `#8E8E88` | Secondary text |
-| `--accent` | `#E2B659` | Harvest gold: the one accent, used sparingly (background is `#0E1511`, text `#EBE6D6`) |
+| `--accent` | `#C6F432` | Lime signature: "growth.", indices, tags, hover and active states, the growth line (background `#0B0B0C`, text `#EDEDE8`)
 
 ## Type
-- Display and interface: **Archivo** (variable, width axis), uppercase for the big headlines, sentence case elsewhere
-- Reading text: **Newsreader**
+- Display: **Archivo** (variable), uppercase headlines
+- Reading text and the italic "growth.": **Newsreader**
+- Labels, navigation, metadata: **JetBrains Mono**, small uppercase
 - Both fonts are self-hosted through Fontsource; no external font requests
 - Scale: 12 · 14 · 16 · 20 · 28 · 40 · 64 · 120 (fluid)
 

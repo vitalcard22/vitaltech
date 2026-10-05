@@ -5,58 +5,68 @@
   border-top: 1px solid var(--line);
 }
 
-.discipline {
+.capability {
+  position: relative;
   display: grid;
-  gap: 20px;
-  padding-block: clamp(36px, 5vw, 64px);
+  gap: 14px;
+  padding-block: clamp(32px, 4.4vw, 56px);
   border-bottom: 1px solid var(--line);
 }
+/* lime line draws across the top of a row on hover */
+.capability::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 900ms var(--ease);
+}
+.capability:hover::before {
+  transform: scaleX(1);
+}
 
-.discipline__index {
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  font-variant-numeric: tabular-nums;
+.capability__index {
   color: var(--accent);
 }
-
-.discipline__verb {
-  font-size: clamp(3.5rem, 15vw, 6.5rem);
-  font-stretch: 100%;
-  line-height: 0.9;
+.capability__title {
+  font-size: clamp(1.625rem, 3.2vw, 2.75rem);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  overflow-wrap: break-word;
 }
-
-.discipline__title {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  margin-bottom: 10px;
-}
-.discipline__body {
+.capability__body {
+  margin-top: 16px;
+  max-width: 52ch;
   color: var(--text-dim);
-  max-width: 46ch;
+  font-size: var(--fs-lead);
+  line-height: 1.55;
 }
-
-.discipline__points {
-  margin-top: 20px;
+.capability__tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
 }
-.discipline__points li {
-  padding-block: 9px;
-  border-top: 1px solid var(--line);
-  font-size: 1rem;
+.capability__tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 @media (min-width: 900px) {
-  .discipline {
-    grid-template-columns: 32px minmax(0, 1fr) minmax(0, 20rem);
-    align-items: start;
+  .capability {
+    grid-template-columns: 40px minmax(0, 1fr) 11rem;
     column-gap: clamp(20px, 2.4vw, 40px);
+    align-items: start;
   }
-  .discipline__index {
+  .capability__index,
+  .capability__tag {
     padding-top: 0.5em;
-  }
-  .discipline__verb {
-    font-size: clamp(3.25rem, 5.6vw, 6rem);
   }
 }

@@ -19,7 +19,9 @@ export default function App() {
         Skip to content
       </a>
       <Navbar />
-      <main id="main">{page}</main>
+      <main id="main" className="page" key={path}>
+        {page}
+      </main>
       <Footer />
     </>
   )

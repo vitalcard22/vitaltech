@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
-import { nav, site } from '../data/site'
-import { goToSection, navigate } from '../hooks/useRoute'
+import { contact, nav, site } from '../data/site'
+import { useActiveSection } from '../hooks/useActiveSection'
+import { goToSection, navigate, useRoute } from '../hooks/useRoute'
 import { useScrolled } from '../hooks/useScrolled'
 import { Button } from './Button'
 import './Navbar.css'
 
+const ids = nav.map((n) => n.target)
+
 export function Navbar() {
   const scrolled = useScrolled(24)
+  const path = useRoute()
+  const active = useActiveSection(ids, path === '/')
   const [open, setOpen] = useState(false)
 
   // lock scroll + close on Escape while the mobile menu is open
@@ -33,7 +38,7 @@ export function Navbar() {
         <a
           href="/"
           className="navbar__brand"
-          aria-label={`${site.brand} — home`}
+          aria-label={`${site.brand}: home`}
           onClick={(e) => {
             e.preventDefault()
             setOpen(false)
@@ -48,7 +53,8 @@ export function Navbar() {
             <a
               key={item.target}
               href={`/#${item.target}`}
-              className="navbar__link"
+              className={`navbar__link ${active === item.target ? 'is-active' : ''}`}
+              aria-current={active === item.target ? 'location' : undefined}
               onClick={(e) => {
                 e.preventDefault()
                 go(item.target)
@@ -60,8 +66,8 @@ export function Navbar() {
         </nav>
 
         <div className="navbar__cta">
-          <Button variant="ghost" onClick={() => go('contact')}>
-            Hire me ↗
+          <Button variant="ghost" arrow="up" onClick={() => go('contact')}>
+            Let’s work together
           </Button>
         </div>
 
@@ -80,7 +86,7 @@ export function Navbar() {
 
       <div id="mobile-menu" className="navbar__sheet" hidden={!open}>
         <nav className="container navbar__sheet-inner" aria-label="Mobile">
-          {nav.map((item) => (
+          {nav.map((item, i) => (
             <a
               key={item.target}
               href={`/#${item.target}`}
@@ -90,12 +96,16 @@ export function Navbar() {
                 go(item.target)
               }}
             >
+              <span className="label">0{i + 1}</span>
               {item.label}
             </a>
           ))}
-          <div className="navbar__sheet-cta">
-            <Button variant="primary" size="lg" onClick={() => go('contact')}>
-              Hire me ↗
+          <div className="navbar__sheet-foot">
+            <a className="label navbar__sheet-mail" href={contact.links[0].href}>
+              {contact.links[0].value}
+            </a>
+            <Button variant="primary" size="lg" arrow="right" onClick={() => go('contact')}>
+              Let’s work together
             </Button>
           </div>
         </nav>

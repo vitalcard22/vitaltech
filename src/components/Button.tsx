@@ -5,6 +5,8 @@ import './Button.css'
 interface Props {
   children: ReactNode
   variant?: 'primary' | 'ghost'
+  /** Appends an arrow: "right" = →, "up" = ↗ */
+  arrow?: 'up' | 'right' | false
   href?: string
   /** Internal route handled by the client router */
   to?: string
@@ -13,9 +15,18 @@ interface Props {
   external?: boolean
 }
 
-export function Button({ children, variant = 'primary', href, to, onClick, size = 'md', external }: Props) {
+export function Button({ children, variant = 'primary', arrow = false, href, to, onClick, size = 'md', external }: Props) {
   const cls = `btn btn--${variant} btn--${size}`
-  const inner = <span className="btn__label">{children}</span>
+  const inner = (
+    <>
+      <span className="btn__label">{children}</span>
+      {arrow && (
+        <span className="btn__arrow" aria-hidden="true">
+          {arrow === 'up' ? '↗' : '→'}
+        </span>
+      )}
+    </>
+  )
 
   if (to) {
     return (

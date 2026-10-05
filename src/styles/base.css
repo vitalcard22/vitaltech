@@ -79,9 +79,10 @@ button {
   background: var(--accent);
   color: var(--accent-ink);
   padding: 10px 16px;
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 .skip-link:focus {
   top: 12px;
@@ -108,33 +109,44 @@ button {
 }
 
 /* Typography primitives */
-/* Small interface text: sentence case, no tracking tricks */
+/* Labels and metadata: small mono capitals */
 .label {
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  letter-spacing: 0.005em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: var(--text-dim);
 }
 
-/* The big uppercase voice: headline, services, about, contact */
+/* The big uppercase voice */
 .display {
   font-family: var(--font-display);
   font-weight: 600;
-  font-stretch: 108%;
+  font-stretch: 100%;
   text-transform: uppercase;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   line-height: 0.94;
 }
 
-/* Quiet section titles */
+/* Editorial italic, used for "growth." only */
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: -0.02em;
+}
+
+/* Section titles: smaller than the hero, still uppercase */
 .heading {
   font-family: var(--font-display);
   font-size: var(--fs-h2);
-  font-weight: 500;
+  font-weight: 600;
   font-stretch: 100%;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
 }
 
 .lead {
@@ -176,11 +188,26 @@ button {
 /* Reveal (driven by useReveal) */
 .reveal {
   opacity: 0;
-  transition: opacity 900ms var(--ease);
+  transform: translateY(14px);
+  transition:
+    opacity 900ms var(--ease),
+    transform 900ms var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
 }
 .reveal.is-visible {
   opacity: 1;
+  transform: none;
+}
+
+/* Route change: the incoming page fades up once */
+.page {
+  animation: page-in 600ms var(--ease) both;
+}
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -196,5 +223,6 @@ button {
   }
   .reveal {
     opacity: 1;
+    transform: none;
   }
 }

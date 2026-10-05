@@ -1,22 +1,23 @@
 .work__list {
   display: grid;
-  gap: clamp(72px, 9vw, 128px);
+  gap: clamp(96px, 12vw, 176px);
 }
 .work__next {
   display: grid;
   gap: 16px;
-  margin-top: clamp(72px, 9vw, 128px);
+  margin-top: clamp(96px, 12vw, 176px);
 }
 .work__next li {
   display: grid;
-  place-items: center;
+  gap: 6px;
+  align-content: center;
   min-height: 120px;
+  padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  color: var(--text-faint);
+}
+.work__next-n {
+  color: var(--accent);
 }
 @media (min-width: 700px) {
   .work__next {

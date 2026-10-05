@@ -3,30 +3,26 @@
 }
 
 .about__title {
-  font-size: clamp(2.5rem, 11vw, 9.5rem);
-  font-stretch: 112%;
-  line-height: 0.9;
+  font-size: clamp(2.625rem, 9vw, 8rem);
+  line-height: 0.92;
+  max-width: 11ch;
   margin-bottom: clamp(56px, 8vw, 112px);
-}
-.about__word {
-  display: block;
 }
 
 .about__grid {
   display: grid;
   gap: clamp(48px, 7vw, 96px);
 }
-
 .about__body {
   display: grid;
   gap: 24px;
   align-content: start;
 }
-.about__lede {
-  font-size: clamp(1.625rem, 3vw, 2.5rem);
-  line-height: 1.22;
+.about__first {
+  font-size: clamp(1.5rem, 2.8vw, 2.375rem);
+  line-height: 1.25;
   letter-spacing: -0.015em;
-  max-width: 28ch;
+  max-width: 30ch;
 }
 .about__p {
   font-size: var(--fs-lead);
@@ -35,26 +31,53 @@
   max-width: 54ch;
 }
 
-.about__facts {
+/* I can build it. / analyse it. / grow it. */
+.about__triad {
   display: grid;
   align-content: start;
   border-top: 1px solid var(--line);
 }
-.about__fact {
+.about__triad li {
   display: grid;
-  gap: 4px;
-  padding-block: 18px;
+  gap: 8px;
+  padding-block: 22px;
   border-bottom: 1px solid var(--line);
 }
-.about__fact dd {
-  margin: 0;
-  font-size: 1.125rem;
-  line-height: 1.4;
+.about__triad .label {
+  color: var(--accent);
+}
+.about__triad-line {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  line-height: 1.05;
+}
+
+/* toolkit: grouped by Web / Data / Growth rather than listed as logos */
+.toolkit {
+  display: grid;
+  gap: 40px 32px;
+  margin-top: clamp(72px, 9vw, 128px);
+}
+.toolkit__tag {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--text);
+}
+.toolkit__group li {
+  padding-block: 9px;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-dim);
 }
 
 @media (min-width: 900px) {
   .about__grid {
     grid-template-columns: 1.4fr 1fr;
     column-gap: clamp(64px, 8vw, 144px);
+  }
+  .toolkit {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: clamp(32px, 4vw, 64px);
   }
 }

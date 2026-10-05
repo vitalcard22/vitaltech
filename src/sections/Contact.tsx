@@ -20,8 +20,7 @@ export function Contact() {
 
         <div className="contact__row">
           <Reveal delay={150} className="contact__lead">
-            <p className="lead">{contact.sub}</p>
-            <Button variant="primary" size="lg" href={primary.href}>
+            <Button variant="primary" size="lg" arrow="right" href={primary.href}>
               {contact.cta}
             </Button>
           </Reveal>

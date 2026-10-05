@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { hero } from '../data/site'
 import { goToSection } from '../hooks/useRoute'
 import { Button } from '../components/Button'
@@ -12,8 +13,17 @@ export function Hero() {
           <h1 id="hero-title" className="display hero__title">
             {hero.headline.map((line, i) => (
               <span className="hero__line" key={line}>
-                <span className="hero__line-inner" style={{ animationDelay: `${150 + i * 110}ms` }}>
-                  {line}
+                <span
+                  className={`hero__line-inner ${line === hero.emphasis ? 'serif hero__emph' : ''}`}
+                  style={{ animationDelay: `${150 + i * 110}ms` }}
+                >
+                  {line.split('|').map((part, n) => (
+                    <Fragment key={part}>
+                      {n > 0 && <br className="hero__br" />}
+                      {n > 0 ? ' ' : ''}
+                      {part}
+                    </Fragment>
+                  ))}
                 </span>
               </span>
             ))}
@@ -24,11 +34,18 @@ export function Hero() {
         </div>
 
         <div className="hero__foot">
-          <p className="hero__role">{hero.role}</p>
+          <ul className="hero__designation" aria-label="Disciplines">
+            {hero.designation.map((item) => (
+              <li key={item} className="label">
+                {item}
+              </li>
+            ))}
+          </ul>
+
           <div className="hero__side">
-            <p className="lead">{hero.description}</p>
+            <p className="hero__statement">{hero.statement}</p>
             <div className="hero__actions">
-              <Button variant="primary" size="lg" onClick={() => goToSection('work')}>
+              <Button variant="primary" size="lg" arrow="right" onClick={() => goToSection('work')}>
                 {hero.primary}
               </Button>
               <Button variant="ghost" size="lg" onClick={() => goToSection('contact')}>

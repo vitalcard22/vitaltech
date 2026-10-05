@@ -1,15 +1,18 @@
 import { placeholders, projects } from '../data/projects'
 import { ProjectEntry } from '../components/ProjectEntry'
 import { Reveal } from '../components/Reveal'
+import { SectionTitle } from '../components/SectionTitle'
 import './Work.css'
 
 export function Work() {
   return (
     <section id="work" className="section work" aria-labelledby="work-title">
       <div className="container split">
-        <h2 id="work-title" className="heading split__head">
-          Selected work
-        </h2>
+        <SectionTitle id="work-title">
+          Selected
+          <br />
+          work
+        </SectionTitle>
 
         <div className="split__body">
           <div className="work__list">
@@ -18,10 +21,12 @@ export function Work() {
             ))}
           </div>
 
-          {/* Reserved for future projects; nothing is invented here */}
           <Reveal as="ul" className="work__next">
             {placeholders.map((p) => (
-              <li key={p.id}>Next project, in progress</li>
+              <li key={p.index}>
+                <span className="label work__next-n">{p.index}</span>
+                <span className="label">Next project, in progress</span>
+              </li>
             ))}
           </Reveal>
         </div>

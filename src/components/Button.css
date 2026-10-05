@@ -2,10 +2,11 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  letter-spacing: 0.005em;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-nav);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   white-space: nowrap;
   border-radius: var(--radius);
   border: 1px solid var(--line-strong);
@@ -17,11 +18,12 @@
 }
 
 .btn--md {
-  padding: 11px 20px;
+  min-height: 44px;
+  padding: 10px 20px;
 }
 .btn--lg {
-  padding: 17px 30px;
-  font-size: 1rem;
+  min-height: 56px;
+  padding: 16px 28px;
 }
 
 /* fill sweeps up from below on hover */
@@ -54,4 +56,12 @@
 .btn--primary:focus-visible {
   color: var(--accent-ink);
   border-color: var(--text);
+}
+
+.btn__arrow {
+  display: inline-block;
+  transition: transform var(--t-med) var(--ease);
+}
+.btn:hover .btn__arrow {
+  transform: translateX(3px);
 }

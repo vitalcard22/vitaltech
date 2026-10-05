@@ -1,4 +1,4 @@
-import { about } from '../data/site'
+import { about, toolkit } from '../data/site'
 import { Reveal } from '../components/Reveal'
 import './About.css'
 
@@ -8,33 +8,42 @@ export function About() {
       <div className="container">
         <Reveal>
           <h2 id="about-title" className="display about__title">
-            {about.heading.map((word) => (
-              <span key={word} className="about__word">
-                {word}
-              </span>
-            ))}
+            {about.heading}
           </h2>
         </Reveal>
 
         <div className="about__grid">
           <Reveal className="about__body">
-            <p className="about__lede">{about.lede}</p>
-            {about.paragraphs.map((p) => (
+            <p className="about__first">{about.paragraphs[0]}</p>
+            {about.paragraphs.slice(1).map((p) => (
               <p key={p} className="about__p">
                 {p}
               </p>
             ))}
           </Reveal>
 
-          <Reveal as="dl" className="about__facts" delay={120}>
-            {about.facts.map((f) => (
-              <div key={f.k} className="about__fact">
-                <dt className="label">{f.k}</dt>
-                <dd>{f.v}</dd>
-              </div>
+          <Reveal as="ul" className="about__triad" delay={120}>
+            {about.triad.map((line, i) => (
+              <li key={line}>
+                <span className="label">{toolkit[i].tag}</span>
+                <span className="about__triad-line">{line}</span>
+              </li>
             ))}
           </Reveal>
         </div>
+
+        <Reveal className="toolkit">
+          {toolkit.map((group) => (
+            <div key={group.tag} className="toolkit__group">
+              <h3 className="label toolkit__tag">{group.tag}</h3>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </Reveal>
       </div>
     </section>
   )

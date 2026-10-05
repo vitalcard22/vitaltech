@@ -20,7 +20,7 @@
 
 .navbar.is-scrolled,
 .navbar.is-open {
-  background: rgba(14, 21, 17, 0.94);
+  background: rgba(11, 11, 12, 0.92);
   border-color: var(--line);
 }
 .navbar.is-scrolled .navbar__inner {
@@ -33,8 +33,9 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-stretch: 108%;
-  font-size: clamp(0.8rem, 3.5vw, 1.0625rem);
-  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: clamp(0.68rem, 3.3vw, 0.9375rem);
+  letter-spacing: -0.005em;
   white-space: nowrap;
   min-width: 0;
 }
@@ -46,11 +47,12 @@
 
 .navbar__link {
   position: relative;
-  font-family: var(--font-display);
-  font-size: var(--fs-small);
-  font-weight: 500;
+  font-family: var(--font-mono);
+  font-size: var(--fs-nav);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text-dim);
-  padding-block: 6px;
+  padding-block: 8px;
   transition: color var(--t-fast) var(--ease);
 }
 .navbar__link::after {
@@ -65,10 +67,12 @@
   transform-origin: left;
   transition: transform var(--t-med) var(--ease);
 }
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link.is-active {
   color: var(--text);
 }
-.navbar__link:hover::after {
+.navbar__link:hover::after,
+.navbar__link.is-active::after {
   transform: scaleX(1);
 }
 
@@ -129,14 +133,26 @@
   gap: 20px;
   padding-block: 22px;
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: -0.03em;
   font-size: clamp(2.4rem, 12vw, 4rem);
   border-bottom: 1px solid var(--line);
 }
-.navbar__sheet-cta {
+.navbar__sheet-link .label {
+  color: var(--accent);
+}
+.navbar__sheet-foot {
+  display: grid;
+  gap: 20px;
+  justify-items: start;
   margin-top: auto;
   padding-top: 40px;
+}
+.navbar__sheet-mail {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
 }
 
 @media (min-width: 900px) {

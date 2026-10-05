@@ -1,0 +1,79 @@
+.experience {
+  border-top: 1px solid var(--line);
+}
+.experience__lede {
+  margin-top: 24px;
+  max-width: 30ch;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+/* a line that climbs from the first role to the current one */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: clamp(56px, 7vw, 96px);
+  padding-left: clamp(36px, 5vw, 72px);
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--line-strong), var(--accent));
+}
+
+.step {
+  position: relative;
+}
+.step__node {
+  position: absolute;
+  left: calc(-1 * clamp(36px, 5vw, 72px));
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+}
+.step--now .step__node {
+  width: 13px;
+  height: 13px;
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px rgba(198, 244, 50, 0.16);
+}
+.step__period {
+  color: var(--text-dim);
+}
+.step--now .step__period {
+  color: var(--accent);
+}
+.step__role {
+  margin-top: 14px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  font-size: clamp(1.625rem, 3.4vw, 3rem);
+}
+.step__company {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: var(--fs-lead);
+}
+.step__points {
+  margin-top: 28px;
+  border-top: 1px solid var(--line);
+  max-width: 56ch;
+}
+.step__points li {
+  padding-block: 11px;
+  border-bottom: 1px solid var(--line);
+}
+
+.experience .heading {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+}
