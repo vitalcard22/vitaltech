@@ -8,7 +8,7 @@ export function Work() {
     <section id="work" className="section work" aria-labelledby="work-title">
       <div className="container split">
         <SectionTitle id="work-title">
-          Selected
+          Latest
           <br />
           work
         </SectionTitle>
