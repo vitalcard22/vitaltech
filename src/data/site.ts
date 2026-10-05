@@ -104,7 +104,6 @@ export const contact = {
   links: [
     { label: 'Email', value: 'nwanehiuduchisom@gmail.com', href: 'mailto:nwanehiuduchisom@gmail.com' },
     { label: 'WhatsApp', value: '+234 813 540 7221', href: 'https://wa.me/2348135407221' },
-    { label: 'GitHub', value: 'github.com/vitalcard22', href: 'https://github.com/vitalcard22' },
     // TODO: add LinkedIn and X here when you have them, for example:
     // { label: 'LinkedIn', value: 'linkedin.com/in/your-handle', href: 'https://www.linkedin.com/in/your-handle' },
   ],
